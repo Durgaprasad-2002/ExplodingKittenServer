@@ -48,7 +48,7 @@ router.post("/updatescore/end", async (req, res) => {
       return res.status(404).json({ message: "Game not found" });
     }
 
-    game.score += action === "win" ? 10 : -5;
+    game.score += action === "win" ? 10 : 0;
     game.status = "ended";
     await game.save();
 
